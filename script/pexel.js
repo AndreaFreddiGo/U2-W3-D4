@@ -1,5 +1,6 @@
 //cerco di targhettizzare tutte le immagini delle card una volta sola in modo da poterle modificare al click dei bottoni
 const previousImages = document.getElementsByClassName('bd-placeholder-img')
+const tag9mins = document.getElementsByTagName('small')
 
 // creo una funzione che mi farà partire una fetch per il recupero delle immagini e che verrà invocata al click del bottono
 const getImages = () => {
@@ -26,6 +27,7 @@ const getImages = () => {
       console.log('arrayOfImages', arrayOfImages)
       for (let i = 0; i < previousImages.length; i++) {
         previousImages[i].src = arrayOfImages.photos[i].src.original
+        tag9mins[i].innerText = arrayOfImages.photos[i].id
       }
       //   con questo ciclo riesco a sostituire tutte le foto presenti nelle card con foto nuove della Grecia prese da Pexel
     })
@@ -59,6 +61,7 @@ const getOtherImages = () => {
       console.log('arrayOfImages', arrayOfImages)
       for (let i = 0; i < previousImages.length; i++) {
         previousImages[i].src = arrayOfImages.photos[i].src.original
+        tag9mins[i].innerText = arrayOfImages.photos[i].id
       }
       //   con questo ciclo riesco a sostituire tutte le foto presenti nelle card con foto nuove della Grecia prese da Pexel
     })
